@@ -55,7 +55,7 @@ function App() {
           </Box>
         </Container>
         </Card>
-        
+        <Container fixed >
         <ImageList
           sx={{ width: '100%', height: '100%', paddingTop: '1vh' }}
           variant="quilted"
@@ -68,10 +68,13 @@ function App() {
             </ImageListItem>
           ))}
         </ImageList>
+        </Container>
+        <Container fixed sx={{paddingTop: '10vh'}}>
         <Grid item xs={20}>
           {properties.arrayData.length > 0 ? <Carrusel
             {...properties} /> : <Grid />}
         </Grid>
+        </Container>
       </Grid>
     </Layout>
   );

@@ -2,7 +2,7 @@ import axios from "axios-observable";
 
 
 const axiosClient = axios.create({
-    baseURL: 'https://api-cluthyfrenos.herokuapp.com/api/cluthfrenos'
+    baseURL: 'http://localhost:8080/api/cluthfrenos'
 })
 
 export default axiosClient;

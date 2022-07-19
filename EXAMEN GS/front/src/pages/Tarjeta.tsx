@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useState } from 'react';
 import { CluthFrenos } from '../core/interface/CluthFrenos';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 type propsData = {
   arrayData: CluthFrenos[]
@@ -51,7 +52,7 @@ function Tarjeta(props: propsData) {
 
   return (
     <Grid container sx={{ textAlign: 'center', alignItems: 'center', alignContent: 'center', justifyContent: 'center', padding: '1vh' }}>
-       <Card>
+       <Card elevation={10}>
         <CardMedia
           component="img"
           height="100"
@@ -60,19 +61,19 @@ function Tarjeta(props: propsData) {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5">
           {itemData[0].nombre}
           </Typography>
         </CardContent>
-      <CardActions>
-      <Button variant='contained' color='primary' onClick={buy}>Comprar</Button>
+      <CardActions sx={{justifyContent: 'center'}}>
+      <Button variant='contained' color='primary' onClick={buy}>
+      <AddShoppingCartIcon/>
+      </Button>
       </CardActions>
     </Card>
-        {/* <Button variant='contained' color='primary' onClick={buy}>Comprar</Button> */}
-
       <Dialog open={status} onClose={handleClose}>
         <DialogContent>
-          <Card sx={{ maxWidth: 345}}>
+          <Card sx={{ minWidth: 345}} elevation={10}>
             <CardHeader
               title={itemData[0].nombre}
             />
@@ -102,7 +103,8 @@ function Tarjeta(props: propsData) {
                     >
                       <MenuItem value={0}>Seleccione cantidad</MenuItem>
                       <MenuItem value={1}>1</MenuItem>
-                      
+                      <MenuItem value={2}>2</MenuItem>
+                      <MenuItem value={3}>3</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
